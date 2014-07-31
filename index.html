@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	    <meta charset="utf-8">
+	    <title>HumanMail</title>
+	    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	    <link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+
+	    <div class="container non-printable">
+	        <h1>The Human Mail</h1>
+	    </div>
+
+	    <div class="container non-printable">
+	        <div class="button-group">
+	            <button class="success" id="button" onclick="toggleStartStop()"></button>
+	            <!--button class="danger" id="delete" onclick="deleteInterim()">Delete</button-->
+	            <div class="pull-right">
+	                <button class="default small" id="strikethrough" onclick="strikeApplier.toggleSelection();"><i class="fa fa-strikethrough"></i>
+	                </button>
+	                <button class="default small" id="erase" onclick="blurApplier.toggleSelection();"><i class="fa fa-eraser"></i>
+	                </button>
+	                <button class="default small" id="text-decrease" onclick="decreaseTextSize()"><i class="fa fa-minus"></i>
+	                </button>
+	                <button class="default small" id="text-increase" onclick="increaseTextSize()"><i class="fa fa-plus"></i>
+	                </button>
+	            </div>
+
+	        </div>
+	    </div>
+		
+		<div class="container printable" id="main-container">
+		    <div class="container printable" id="content_box">
+		        <div id="letter" class="letter">
+		            <span id="final_span" style="color:black"></span>
+		            <span id="interim_span" style="color:grey"></span>
+		            <!--span id="cursor"><img src="blinking_dot.gif"></span-->
+		        </div>
+		    </div>
+
+		    <div class="container non-printable hidden" id="edit_box">
+		        <textarea name="letter" id="letter_text"></textarea>
+		        <div class="pull-right">
+			        <button class="default small" id="edit-done" onclick="editDone()"><i class="fa fa-check"></i>
+		        </button>
+		        </div>
+			</div>			
+		</div>
+
+		<div class="container non-printable" id="tasks">
+	        <div class="button-group">
+	            <button class="default" id="email_button" class="button" onclick="createEmail()"><i class="fa fa-envelope"></i>
+	                Create Email</button>
+	            <button class="default" id="print_button" class="button" onclick="window.print()"><i class="fa fa-print"></i>
+	                Print
+	            </button>
+	        </div>
+	    </div>
+	    <script type="text/javascript" src="js/rangy-core.js"></script>
+	    <script type="text/javascript" src="js/rangy-cssclassapplier.js"></script>
+	    <script type="text/javascript" src="js/script.js"></script>
+	</body>
+
+</html>
